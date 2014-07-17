@@ -1,0 +1,163 @@
+<div ng-if='atRoot' id='home'>
+  <div class='hero-img' on-scroll='top' style='background-image:url("assets/milky-way-galaxy-visible-in-the-night-sky-15644.jpg")'>
+  </div>
+  <typo-display-1 class='slogan'>we design, deploy and maintain cloud infrastructure</typo-display-1>
+</div>
+
+<div ng-if='atRoot' id='promo-1'>
+  <!--<paper-shadow  z="1"></paper-shadow>-->
+  <div  class='container'>
+    <div class='text'>
+      <typo-title>Do you need the Cloud?</typo-title>
+      <typo-body-1>
+        I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar 
+        dapibus leo ullamcorper mattis, pulvinar dapibus leo.
+        
+      </typo-body-1>
+      <!--<a ui-sref='services.iaas'>test me</a>-->
+    </div>
+    <div class='hero' >
+      <img src='assets/Cloud-Filing-Cabinet-copy.jpg'>
+    </div>
+  </div>
+</div>
+<!--<input ng-init="mytestt = true" type='checkbox' ng-model='mytestt'>test me</input>-->
+<div id='services' ng-if='atRoot'>
+  <div class='hero-img' style='background-image:url("assets/Selling-Financial-Services.jpg")'></div>
+  <typo-display-1 class='slogan'>IT infrasturecture for your needs</typo-display-1>
+</div>
+
+<div id='service-cards'>
+  <!--<paper-shadow z="1"></paper-shadow>-->
+  <div class='container'>
+  
+    <div ng-repeat='s in serviceList' 
+      ng-init="iShadowLvl=1; activeService=''" 
+      ng-mouseenter="iShadowLvl=4;" 
+      ng-mouseleave="iShadowLvl=1;" 
+      class='card'
+      ng-if='atRoot || activeService == s.id'>
+      <!--<img-uri src="assets/serverraum-led.jpg" ng-model='iaasHeroImg'></img-uri>-->
+      <paper-shadow z="[[iShadowLvl]]" animated="true"></paper-shadow>
+      <div class='hero' style='background-image: url("[[s.hero]]")'>
+        <typo-title-thin>[[s.title]]</typo-title-thin>
+      </div>
+      <div class='info' >
+        <typo-body-1 class='excerpt'>[[s.excerpt]]</typo-body-1>
+        <div class= 'subservice' ng-repeat='sub in s.subservices'>
+          <core-icon icon='custom-icons:[[sub.icon]]' size='50px'></core-icon>
+          <typo-body-2>[[sub.title]]</typo-body-2>
+        </div>
+      </div>
+      <paper-icon-button href class='more' icon='arrow-drop-down' size='100px' ui-sref='[[s.state({activeService: s.id})]]'></paper-icon-button>
+      <!--<a  ui-sref='[[s.state]]'>more</a>-->
+    </div>
+  </div>
+  
+  <div id='service-page' ui-view autoscroll="false"></div>
+</div>
+
+
+
+<div id='about_us' ng-if='atRoot'>
+  <!--<div class='hero-img' style='background-image:url("http://toolegittoaudit.com/wp-content/uploads/2014/02/Selling-Financial-Services.jpg")'></div>-->
+  <div class='container'>
+    <typo-display-1 class='title'>about us</typo-display-1>
+    <typo-body-1>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </typo-body-1>
+  </div>
+  
+</div>
+
+
+
+
+  <div id='contact_us' ng-if='atRoot'>
+    <!--<div class='hero-img' style='background-image:url("http://toolegittoaudit.com/wp-content/uploads/2014/02/Selling-Financial-Services.jpg")'></div>-->
+    <div class='container'>
+      <typo-display-1>we would love to work with you</typo-display-1>
+      
+      <div class='contact_details'>
+        <typo-caption>
+          <core-icon icon="communication:call"></core-icon>
+          +61 4 433 489 92
+        </typo-caption>
+        <typo-body-3>
+          34 Thornton St, Macleod 3038
+          Victoria
+          Australia
+        </typo-body-3>
+        <typo-body-3>
+          info@glassinsight.com.au
+        </typo-body-3>
+        
+      </div>
+      <div class='social_icons'>
+        <paper-icon-button icon="custom-icons:facebook"></paper-icon-button>
+        <paper-icon-button icon="custom-icons:gplus"></paper-icon-button>
+        <paper-icon-button icon="custom-icons:twitter"></paper-icon-button>
+      </div>
+      <typo-disclamer>Designed by GlassInsight ©</typo-disclamer>
+      <br>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+<!--<div id='header-wrapper'>-->
+<!--  <div id='header'>-->
+<!--    <div class='logo'>-->
+<!--      <img src='//glassinsight.com.au/wp/wp-content/uploads/2014/07/Glass-Insight-04-300x262.png'>-->
+<!--    </div>-->
+<!--    <div class='nav'>-->
+<!--      <paper-tabs selected="0">-->
+<!--        <paper-tab scroll-to="home">home</paper-tab>-->
+<!--        <paper-tab scroll-to="services">services</paper-tab>-->
+<!--        <paper-tab scroll-to="about_us">about us</paper-tab>-->
+<!--        <paper-tab scroll-to="contact_us">contact us</paper-tab>-->
+<!--      </paper-tabs>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div scroll-from='D:D'>-->
+
+<!--<div id='home'>-->
+<!--  <div class='hero-img' on-scroll='top' style='background-image:url("http://glassinsight.com.au/wp/wp-content/uploads/2014/06/milky-way-galaxy-visible-in-the-night-sky-15644.jpg")'>-->
+<!--  </div>-->
+<!--  <typo-display-1 class='slogan'>we design, deploy and maintain cloud infrastructure</typo-display-1>-->
+<!--</div>-->
+
+<!--<div class='shadow-container'>-->
+<!--  <paper-shadow z="1"></paper-shadow>-->
+<!--  <div id='promo-1'>-->
+<!--    <div class='text'>-->
+<!--      <typo-title>Do you need the Cloud?</typo-title>-->
+<!--      <typo-body-1>-->
+<!--        I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, -->
+<!--        consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar -->
+<!--        dapibus leo ullamcorper mattis, pulvinar dapibus leo.-->
+<!--      </typo-body-1>-->
+<!--    </div>-->
+<!--    <div class='hero' >-->
+<!--      <img src='http://glassinsight.com.au/wp/wp-content/uploads/2014/07/Cloud-Filing-Cabinet-copy.jpg'>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div id='services'>-->
+<!--  <div class='hero-img' style='background-image:url("http://toolegittoaudit.com/wp-content/uploads/2014/02/Selling-Financial-Services.jpg")'>-->
+    
+<!--  </div>-->
+<!--  <typo-display-1 class='slogan'>services</typo-display-1>-->
+<!--</div>-->
+

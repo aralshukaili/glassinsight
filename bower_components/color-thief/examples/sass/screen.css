@@ -1,0 +1,736 @@
+/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
+/* line 6, _normalize.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/* line 10, _normalize.sass */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* line 13, _normalize.sass */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 21, _normalize.sass */
+[hidden] {
+  display: none;
+}
+
+/* line 27, _normalize.sass */
+html {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 42, _normalize.sass */
+body {
+  margin: 0;
+}
+
+/* line 50, _normalize.sass */
+a:focus {
+  outline: thin dotted;
+}
+/* line 54, _normalize.sass */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* line 61, _normalize.sass */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 66, _normalize.sass */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 70, _normalize.sass */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 74, _normalize.sass */
+dfn {
+  font-style: italic;
+}
+
+/* line 78, _normalize.sass */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 84, _normalize.sass */
+mark {
+  background: yellow;
+  color: black;
+}
+
+/* line 89, _normalize.sass */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* line 94, _normalize.sass */
+pre {
+  white-space: pre-wrap;
+}
+
+/* line 98, _normalize.sass */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* line 102, _normalize.sass */
+small {
+  font-size: 80%;
+}
+
+/* line 106, _normalize.sass */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 112, _normalize.sass */
+sup {
+  top: -0.5em;
+}
+
+/* line 115, _normalize.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 122, _normalize.sass */
+img {
+  border: 0;
+}
+
+/* line 126, _normalize.sass */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 133, _normalize.sass */
+figure {
+  margin: 0;
+}
+
+/* line 140, _normalize.sass */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 145, _normalize.sass */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 152, _normalize.sass */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 163, _normalize.sass */
+button, input {
+  line-height: normal;
+}
+
+/* line 170, _normalize.sass */
+button, select {
+  text-transform: none;
+}
+
+/* line 173, _normalize.sass */
+button, html input[type='button'], input[type='reset'], input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 182, _normalize.sass */
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+/* line 186, _normalize.sass */
+input[type='checkbox'], input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+/* line 193, _normalize.sass */
+input[type='search'] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 203, _normalize.sass */
+input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 207, _normalize.sass */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 211, _normalize.sass */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 222, _normalize.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Typography
+ *----------------------------------------------- */
+/* line 46, screen.sass */
+html {
+  font: 87%/1.5 "Karla", "lucida grande", sans-serif, sans-serif;
+  font-weight: 400;
+}
+
+@media (min-width: 40rem) {
+  /* line 51, screen.sass */
+  html {
+    font-size: 100%;
+  }
+}
+@media (min-width: 64rem) {
+  /* line 55, screen.sass */
+  html {
+    font-size: 106%;
+  }
+}
+/* line 58, screen.sass */
+body {
+  color: #777777;
+  background-color: #f3f3f3;
+}
+
+/* line 62, screen.sass */
+h1, h2, h3, h4, h5 {
+  color: #222222;
+  line-height: 1.2em;
+  font-family: "Montserrat", "Helvetica", sans-serif;
+  font-weight: 700;
+}
+
+/* line 68, screen.sass */
+h1 {
+  font-size: 4rem;
+  margin: 0 0 0.2em 0;
+  line-height: 1.1em;
+}
+
+@media (min-width: 40rem) {
+  /* line 74, screen.sass */
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  /* line 78, screen.sass */
+  h1 {
+    font-size: 5rem;
+  }
+}
+/* line 81, screen.sass */
+h2 {
+  color: #e67e39;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 40rem) {
+  /* line 88, screen.sass */
+  h2 {
+    font-size: 2rem;
+  }
+}
+/* line 91, screen.sass */
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 95, screen.sass */
+p {
+  margin: 0 auto 2em auto;
+  text-align: left;
+}
+
+/* line 99, screen.sass */
+.lead {
+  max-width: 50rem;
+  margin-bottom: 1.4rem;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 40rem) {
+  /* line 105, screen.sass */
+  .lead {
+    font-size: 1.25rem;
+  }
+}
+/* line 108, screen.sass */
+strong {
+  font-weight: bold;
+}
+
+/* line 111, screen.sass */
+a {
+  color: #44aaee;
+  text-decoration: none;
+}
+/* line 114, screen.sass */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 117, screen.sass */
+::-moz-selection,
+::selection {
+  background: #e67e39;
+  color: white;
+}
+
+/* Code
+ * ========================================================================== */
+/* line 126, screen.sass */
+code {
+  color: #aaaaaa;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font-family: Consolas, Courier, monospace;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.3rem;
+  position: relative;
+  top: -1px;
+}
+
+/* Lists
+ * ========================================================================== */
+/* line 139, screen.sass */
+ul {
+  margin: 0;
+  text-align: left;
+}
+
+@media (min-width: 40rem) {
+  /* line 144, screen.sass */
+  ul {
+    display: inline-block;
+  }
+}
+/* Buttons
+ * ========================================================================== */
+/* line 151, screen.sass */
+.button {
+  display: block;
+  padding: 0.7rem 2rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  color: white;
+  background-color: #44aaee;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 164, screen.sass */
+.button:hover {
+  background: #1595ea;
+  text-decoration: none;
+}
+
+@media (min-width: 40rem) {
+  /* line 169, screen.sass */
+  .button {
+    display: inline-block;
+    margin: 0 0.25rem;
+  }
+}
+/* line 173, screen.sass */
+.button-minor {
+  padding: 0.35rem 1rem;
+  border: 2px solid #44aaee;
+  color: #44aaee;
+  background-color: transparent;
+  font-size: 0.8rem;
+}
+/* line 179, screen.sass */
+.button-minor:hover {
+  color: white;
+}
+
+/* Elements
+ * ========================================================================== */
+/* line 186, screen.sass */
+hr {
+  border: 0;
+  border-top: 2px solid #e6e6e6;
+  margin: 2rem auto;
+  width: 3rem;
+}
+
+@media (min-width: 40rem) {
+  /* line 193, screen.sass */
+  hr {
+    margin: 2.5rem auto;
+  }
+}
+/* -- Layout ------------------------------------------------------------------ */
+/* line 198, screen.sass */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 201, screen.sass */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f3f3;
+}
+
+/* line 206, screen.sass */
+section {
+  border-top: 2px solid #e6e6e6;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+/* line 210, screen.sass */
+section:first-of-type {
+  border-top: none;
+}
+
+@media (min-width: 40rem) {
+  /* line 214, screen.sass */
+  section {
+    padding: 2rem 0;
+  }
+}
+/* line 217, screen.sass */
+.container {
+  margin: 0 auto;
+  max-width: 40rem;
+  width: 90%;
+}
+
+/* -- Header -- */
+/* line 224, screen.sass */
+header {
+  padding: 4rem 0 2rem 0;
+  background-color: white;
+  text-align: center;
+}
+/* line 228, screen.sass */
+header p {
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  /* line 232, screen.sass */
+  header {
+    padding: 2rem 0;
+  }
+}
+/* -- Examples -- */
+/* line 238, screen.sass */
+.image-section {
+  margin-bottom: 80px;
+}
+/* line 240, screen.sass */
+.image-section .image-wrap {
+  position: relative;
+  line-height: 1em;
+}
+
+/* line 246, screen.sass */
+.examples-section .image-section .target-image {
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* line 249, screen.sass */
+.examples-section .image-section.with-color-thief-output .target-image {
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 252, screen.sass */
+.run-functions-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 8rem;
+  margin-top: -4rem;
+  margin-left: -4rem;
+  border: none;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: #777777;
+  background-color: #fdf485;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+}
+/* line 269, screen.sass */
+.run-functions-button:hover {
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+  -moz-transition: -moz-transform 0.2s;
+  -o-transition: -o-transform 0.2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+}
+/* line 272, screen.sass */
+.run-functions-button:active {
+  -moz-transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9);
+  -webkit-transform: scale(0.9, 0.9);
+  transform: scale(0.9, 0.9);
+}
+/* line 274, screen.sass */
+.run-functions-button.hide {
+  background-color: #fdf485;
+  color: #777777;
+  -moz-transition: -moz-transform 0.6s, top 0.6s cubic-bezier(0.22, -0.37, 0.75, 0.75);
+  -o-transition: -o-transform 0.6s, top 0.6s cubic-bezier(0.22, -0.37, 0.75, 0.75);
+  -webkit-transition: -webkit-transform 0.6s, top 0.6s cubic-bezier(0.22, -0.37, 0.75, 0.75);
+  transition: transform 0.6s, top 0.6s cubic-bezier(0.22, -0.37, 0.75, 0.75);
+  top: 105%;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+
+/* line 283, screen.sass */
+.touch .touch-label {
+  display: inline;
+}
+/* line 285, screen.sass */
+.touch .no-touch-label {
+  display: none;
+}
+
+/* line 288, screen.sass */
+.no-touch .touch-label {
+  display: none;
+}
+/* line 290, screen.sass */
+.no-touch .no-touch-label {
+  display: inline;
+}
+
+/* line 293, screen.sass */
+.target-image {
+  display: block;
+  width: 100%;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* line 298, screen.sass */
+.color-thief-output {
+  display: none;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-top-width: 0;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* line 306, screen.sass */
+.function-title {
+  margin-top: 0;
+}
+
+/* line 309, screen.sass */
+.function {
+  margin-bottom: 1.5rem;
+}
+
+/* line 312, screen.sass */
+.swatch {
+  display: inline-block;
+  margin: 0;
+  background: #dddddd;
+}
+
+@media (min-width: 40rem) {
+  /* line 318, screen.sass */
+  .swatch {
+    margin-right: -2px;
+  }
+}
+/* line 322, screen.sass */
+.get-color .swatch {
+  width: 6rem;
+  height: 3rem;
+}
+
+/* line 327, screen.sass */
+.get-palette .swatch {
+  width: 3rem;
+  height: 2rem;
+}
+
+@media (min-width: 40rem) {
+  /* line 333, screen.sass */
+  .get-palette .swatch {
+    width: 4rem;
+    height: 2.7rem;
+  }
+}
+/* line 337, screen.sass */
+canvas {
+  display: none;
+}
+
+/* -- Credits -- */
+/* line 343, screen.sass */
+footer {
+  padding: 2rem 0;
+  background-color: white;
+  text-align: center;
+}
+/* line 347, screen.sass */
+footer p {
+  text-align: center;
+}
+/* line 349, screen.sass */
+footer .button {
+  margin-top: 0.5rem;
+}
+
+/* -- Sharing -- */
+/* line 354, screen.sass */
+.sharing-section {
+  position: fixed;
+  z-index: 10;
+  top: 20px;
+  right: 0;
+}
+
+/* -- Drag and drop ------------------------------------------------------------------ */
+/* line 363, screen.sass */
+.drag-drop-section {
+  display: none;
+}
+
+/* line 366, screen.sass */
+.drop-zone {
+  height: 25rem;
+  margin-bottom: 4rem;
+  background-color: #222222;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 371, screen.sass */
+.drop-zone.dragging {
+  font-weight: 700;
+  -moz-box-shadow: inset 0 0 0 8px #44aaee;
+  -webkit-box-shadow: inset 0 0 0 8px #44aaee;
+  box-shadow: inset 0 0 0 8px #44aaee;
+}
+/* line 374, screen.sass */
+.drop-zone.dragging .drop-zone-label {
+  color: #44aaee;
+}
+/* line 376, screen.sass */
+.drop-zone.dragging .default-label {
+  display: none;
+}
+/* line 378, screen.sass */
+.drop-zone.dragging .dragging-label {
+  display: block;
+}
+
+/* line 381, screen.sass */
+.drop-zone-label {
+  position: relative;
+  top: 11rem;
+  color: #fdf485;
+  font-size: 1.8rem;
+  text-align: center;
+  pointer-events: none;
+  text-transform: uppercase;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+@media (min-width: 40rem) {
+  /* line 392, screen.sass */
+  .drop-zone-label {
+    top: 10.5rem;
+    font-size: 2.4rem;
+  }
+}
+/* line 396, screen.sass */
+.dragging-label {
+  display: none;
+}
+
+/* line 400, screen.sass */
+.dropped-image .run-functions-button {
+  display: none;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>GlassInsight_Project</title>
+
+  <!--stylesheets-->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100,100italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles.css">
+
+  <!--misc js libraries-->
+  <script src="bower_components/platform/platform.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/web-animations-js/web-animations.js"></script>
+  <script src="bower_components/color-thief/dist/color-thief.min.js"></script>
+  <script src="misc/sticky.js"></script>
+  
+  
+  
+  <!--angular libraries-->
+  <script src="angular-libs/angular-smooth-scroll-1.6.0.min.js"></script>
+  <!--<script src="bower_components/angular-smoothscroll/dist/scripts/bb15da28.scripts.js"></script>-->
+  <script src="angular-libs/img-uri.js"></script>
+  
+  <!--Polymer libraries-->
+  <link rel="import" href="polymer-elements/scroll-animation.html">
+  <link rel="import" href="polymer-elements/typography-elements.html">
+  <link rel="import" href="polymer-elements/custom-icons.html">
+  <link rel="import" href="polymer-elements/bg-color-fom-img.html">
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-icons/iconsets/communication-icons.html">
+  <link rel="import" href="bower_components/core-icon/core-icon.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+  
+  
+  
+  <!--<link rel="import" href="bower_components/core-animation/core-animation.html">-->
+  
+  
+  
+</head>
+
+
+
+<body>
+  <div id='header'>
+    <div class='container'>
+      <div class='logo'>
+        <img src='assets/Glass-Insight-04-300x262.png'>
+      </div>
+      <div class='nav'>
+        <paper-tabs selected="0">
+          <paper-tab scroll-to="home">home</paper-tab>
+          <paper-tab scroll-to="services">services</paper-tab>
+          <paper-tab scroll-to="about_us">about us</paper-tab>
+          <paper-tab scroll-to="contact_us">contact us</paper-tab>
+        </paper-tabs>
+      </div>
+    </div>
+  </div>
+  
+  <div ui-view >
+    
+  </div>
+  
+
+  
+
+</body>
+<script src="main.js"></script>
+  
+</html>

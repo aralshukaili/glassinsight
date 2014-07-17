@@ -1,0 +1,466 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "susy";
+@import "breakpoint";
+
+a, a:hover, a:visited {
+  color: inherit;
+  text-decoration: none; /* no underline */
+}
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: split,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: from,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+$primary_color: #3f51b5;
+$primary_color_light: #c5cae9;
+$primary_color_dark: #303f9f;
+
+$accent_color: #ff6e40;
+$accent_color_light: #ff9e80;
+$accent_color_dark: #ff3d00;
+
+$divider_color: rgba(black, 0.12);
+$hint_text_color: rgba(black, 0.26);
+$secondary_black_text_color: rgba(black, 0.54);
+$primary_black_text_color: rgba(black, 0.87);
+$secondary_white_text_color: rgba(white, 0.54);
+$primary_white_text_color: rgba(white, 0.87);
+$primary_black_scrim: rgba(black, 0.15);
+$secondary_white_scrim: rgba(white, 0.15);
+
+$desktop-bp: 800px;
+$tablet-bp: 600px;
+$mobile-bp: 300px;
+
+$page-transition-duration: 1s;
+
+$desktop: layout(12 fluid float 80% center .25 border-box from);
+@include layout($desktop);
+
+
+@mixin headline_font_style() {
+  font-weight: 100;
+  font-size: 2.4rem;
+}
+
+@mixin title_font_style() {
+  font-weight: 300;
+  font-size: 2.0rem;
+}
+
+@mixin caption_font_style() {
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+@mixin button_font_style() {
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+@mixin subhead_font_style() {
+  font-weight: 100;
+  font-size: 1.6rem;
+  @include breakpoint($desktop-bp){
+    font-size: 1.5rem;
+  }
+  
+}
+
+@mixin body2_font_style() {
+  font-weight: 300;
+  font-size: 1.4rem;
+  @include breakpoint($desktop-bp){
+    font-size: 1.3rem;
+  }
+  
+}
+
+@mixin body1_font_style() {
+  font-weight: 100;
+  font-size: 1.4rem;
+  @include breakpoint($desktop-bp){
+    font-size: 1.3rem;
+  }
+  
+}
+
+@mixin menu_font_style() {
+  font-weight: 100;
+  font-size: 1.4rem;
+  @include breakpoint($desktop-bp){
+    font-size: 1.3rem;
+  }
+  
+}
+
+@mixin vertical_align() {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  
+} 
+
+
+
+@mixin white_font_scrim(){
+  text-shadow: -5px 5px 35px #000, 5px -5px 35px #000;
+}
+
+@function flow-direction() {
+  @if susy-get(flow) == 'ltr' {
+    @return left;
+  } @else {
+    @return right;
+  }
+}
+
+@function flow-direction-opposite() {
+  @if susy-get(flow) == 'ltr' {
+    @return right;
+  } @else {
+    @return left;
+  }
+}
+
+@mixin horizontal_align(){
+  #{flow-direction()}: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+
+// Theming
+* /deep/ {
+  paper-tab::shadow #ink {
+    color: $accent_color_light !important;
+  }
+  
+  paper-tabs::shadow #selectionBar {
+    background-color: $accent_color;
+  }
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: $primary_black_text_color;
+  // fill: $primary_black_text_color;
+  /deep/ svg{
+    color: $primary_black_text_color !important;
+    opacity: 0.87;
+  }
+}
+
+#header-wrapper{
+  
+  width: 100%;
+  // background: #467;
+
+}
+
+#header{
+  position: fixed;
+  width: 100%;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  z-index: 100;
+  .container{
+    @include container();
+    .logo{
+      @include span(1);
+      padding-top: .35rem;
+      padding-bottom:.05rem;
+      img{
+        @include span(100%)
+      }
+    }
+    
+    .nav{
+      @include span(5);
+      @include pre(span(6));
+      paper-tabs{
+        position: relative;
+        height: 4.5rem;
+      }
+      /deep/ paper-tab {
+        @include menu_font_style();
+        color: $primary_white_text_color;
+        @include white_font_scrim();
+      }
+    }
+  }
+}
+
+#home{
+  position: relative;
+  @include container(100%);
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  text-align: center;
+  .hero-img{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .slogan{
+    color: $primary_white_text_color;
+    @include white_font_scrim();
+    position: relative;
+    top: 60%;
+  }
+  
+  &.ng-leave{
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) $page-transition-duration;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) $page-transition-duration;
+    &.ng-leave-active{
+      height: 0vh;
+    }
+  }
+   
+  
+ 
+}
+
+// .animate-if.ng-enter, .animate-if.ng-leave {
+//   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+//   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+// }
+
+// .animate-if.ng-enter,
+// .animate-if.ng-leave.ng-leave-active {
+//   opacity:0;
+// }
+
+// .animate-if.ng-leave,
+// .animate-if.ng-enter.ng-enter-active {
+//   opacity:1;
+// }
+
+#promo-1{
+  position: relative;
+  height: 20rem;
+  z-index: 5;
+  overflow: hidden;
+  .container{
+    position: relative;
+    @include container(susy-get(container)/1.5);
+    height: 20rem;
+    padding-top: 3.0rem;
+    padding-bottom: 3.0rem;
+    .text{
+      position: relative; 
+      @include span(6);
+      @include vertical_align();
+    }
+    .hero{
+      position: relative;
+      @include span(6);
+      @include vertical_align();
+      text-align: flow-direction-opposite();
+      img{
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  &.ng-leave{
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) $page-transition-duration;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) $page-transition-duration;
+    &.ng-leave-active{
+      height: 0rem;
+    }
+  }
+}
+
+
+#services{
+  
+  position: relative;
+  width: 100%;
+  height: 10.0rem;
+  overflow: hidden;
+  z-index: -1;
+  text-align: center;
+  .hero-img{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .slogan{
+    color: $primary_white_text_color;
+    @include white_font_scrim();
+    position: relative;
+    top: 30%;
+  }
+  
+  &.ng-leave{
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    &.ng-leave-active{
+      height: 0rem;
+    }
+  }
+  
+}
+
+
+#service-cards{
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  
+
+  // color: white;
+  
+  .container{
+    position: relative;
+    @include container();
+    .card{
+      // &:not(.active){
+      //   &.ng-leave{
+      //     -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+      //     transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+      //     &.ng-leave-active{
+      //       height: 0rem;
+      //     }
+      //   }
+      // }
+      position: relative;
+      @include span(4);
+      transition: 0.2s ease;
+      .hero{
+        position: relative;
+        height: 12rem;
+        background-size: 200%;
+        background-position: center 45%;
+        typo-title-thin {
+          position: relative;
+          top: 75%;
+          #{flow-direction()}: 1.5rem;
+          color: white;
+          @include white_font_scrim();
+        }
+      }
+      .info{
+        position: relative;
+        padding: 1.2rem;
+        
+        .excerpt{
+          height: 3rem;
+          overflow: hidden;
+          margin-bottom: 1rem;
+        }
+        
+        .subservice{
+          position: relative;
+          @include span(6);
+          text-align:center;
+          margin-bottom: 1rem;
+        }
+        
+      }
+      
+      .more{
+        position: relative;
+        @include horizontal_align();
+      }
+    }
+  }
+}
+  
+
+
+
+
+#about_us {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  .container{
+    position: relative;
+    @include container();
+    typo-body-1{
+      position: relative;
+      @include span(8);
+    }
+  }
+  &.ng-leave{
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    &.ng-leave-active{
+      height: 0rem;
+    }
+  }
+}
+  
+  
+#contact_us {
+  position: relative;
+  background: $primary_black_text_color;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  .container{
+    position: relative;
+    @include container();
+    text-align: center;
+  }
+  
+  &.ng-leave{
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    &.ng-leave-active{
+      height: 0rem;
+    }
+  }
+}

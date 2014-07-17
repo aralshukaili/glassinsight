@@ -1,0 +1,34 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bg-color-fom-img" attributes='src'>
+  <template>
+    <content></content>
+  </template>
+  
+  <script>
+    // (function(){
+    
+    Polymer('bg-color-fom-img', {
+      ready: function(){
+        
+      },
+      srcChanged: function(ov, nv){
+        var elm = this;
+        var img = new Image();
+
+        // this.convertImgToBase64(nv, function(base64Img){
+        img.onload= function(){
+          var colorThief = new ColorThief();
+          var c = colorThief.getColor(img);
+          elm.parentNode.style.background= 'rgb('+c[0]+','+c[1]+','+c[2]+')';
+          img.remove();
+        }
+        // });
+        img.src = nv;
+
+      }
+    });
+    // })();
+
+  </script>
+</polymer-element>

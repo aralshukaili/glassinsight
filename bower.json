@@ -1,0 +1,18 @@
+{
+  "name": "GlassInsight_Project",
+  "description": "",
+  "homepage": "",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements#master",
+    "angular": "~1.2.19",
+    "angular-ui-router": "~0.2.10",
+    "color-thief": "*",
+    "angular-animate": "~1.2.20",
+    "angular-smoothscroll": "~1.1.1"
+  }
+}

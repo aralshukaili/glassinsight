@@ -1,0 +1,104 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-animation/core-animation.html">
+
+<polymer-element name="scroll-animation" extends="core-animation" attributes='from to fromOffset toOffset dependent'>
+  <template>
+    
+    <shadow></shadow>
+  </template>
+  
+  <script>
+    (function(){
+      var scroll_animations = scroll_animations ? scroll_animations : [];
+      Polymer('scroll-animation', {
+        publish:{
+          from: {value: 'target-top', reflect: true},
+          to: {value: 'target-bottom', reflect: true},
+          fromOffset: {value: '0', reflect: true},
+          toOffset: {value: '0', reflect: true},
+          dependent: {value: '', reflect: true}
+        },
+        ready: function(){
+          
+          var elem = this.parentNode;
+          this.target = elem;
+          
+          this.play();
+          this.player.pause();
+          
+          var start;
+          var end;
+          
+          if(this.dependent)
+            elem = document.getElementById(this.dependent);
+            
+          var rect = elem.getBoundingClientRect();
+     
+          if(this.from == 'target-top')
+            start = rect.top;
+          else if(this.from == 'top')
+            start = 0;
+          else if(this.from == 'target-bottom')
+            start = rect.bottom;
+          else if(this.from == 'bottom'){
+            var body = document.body,
+            html = document.documentElement;
+            start = Math.max( body.scrollHeight, body.offsetHeight, 
+                         html.clientHeight, html.scrollHeight, html.offsetHeight );
+          } else 
+            start = parseFloat(this.from);
+          
+          
+          if(this.to == 'target-top')
+            end = rect.top;
+          else if(this.to == 'top')
+            end = 0;
+          else if(this.to == 'target-bottom')
+            end = rect.bottom;
+          else if(this.to == 'bottom'){
+            var body = document.body,
+            html = document.documentElement;
+            end = Math.max( body.scrollHeight, body.offsetHeight, 
+                         html.clientHeight, html.scrollHeight, html.offsetHeight );
+          } else 
+            end = parseFloat(this.to);
+          
+         
+          start += parseFloat(this.fromOffset);
+          end += parseFloat(this.toOffset);
+          // console.log(start, end);
+          
+  
+          var player = this.player;
+          var duration = this.duration
+          scroll_animations.push({
+            player: this.player,
+            duration: this.duration,
+            start: start,
+            end: end,
+            lastScroll: -1
+          });
+
+        },
+        currentTime: function(time){
+          this.player.currentTime = time;
+        }
+      });
+      
+      window.onscroll = function (event) {
+        for(var i = 0; i < scroll_animations.length; i++){
+          var scroll = Math.max(Math.min(window.scrollY, scroll_animations[i].end), scroll_animations[i].start);
+          
+          if(scroll_animations[i].lastScroll == scroll)
+            continue;
+          // console.log(scroll_animations[i].start, scroll_animations[i].end, scroll);
+          scroll_animations[i].lastScroll = scroll;
+          var time = ((scroll-scroll_animations[i].start)/(scroll_animations[i].end-scroll_animations[i].start));
+          scroll_animations[i].player.currentTime = Math.min(scroll_animations[i].duration-1, time*scroll_animations[i].duration);
+        }
+      }
+      
+    })();
+
+  </script>
+</polymer-element>
